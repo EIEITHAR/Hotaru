@@ -1,1 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>双方向・通貨換算ツール</title>
+    <!-- パスはご自身の環境に合わせて調整してください -->
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
 
+    <div class="converter-card">
+        <h2><i class="fas fa-coins"></i> 通貨換算ツール</h2>
+        
+        <div class="input-group">
+            <label>金額を入力</label>
+            <input type="number" id="amount" value="1" min="1">
+        </div>
+
+        <div class="dropdown-row">
+            <div class="select-box">
+                <label>変換元</label>
+                <select id="fromCurrency">
+                    <option value="USD">USD - アメリカドル</option>
+                    <option value="JPY" selected>JPY - 日本円</option>
+                    <option value="EUR">EUR - ユーロ</option>
+                    <option value="GBP">GBP - イギリス・ポンド</option>
+                    <option value="MMK">MMK - ミャンマー・チャット</option>
+                    <option value="THB">THB - タイ・バーツ</option>
+                    <option value="SGD">SGD - シンガポール・ドル</option>
+                    <option value="CNY">CNY - 中国元</option>
+                    <option value="KRW">KRW - 韓国ウォン</option>
+                    <option value="AUD">AUD - オーストラリア・ドル</option>
+                </select>
+            </div>
+
+            <div class="swap-container">
+                <button id="swapBtn" title="入れ替え"><i class="fas fa-exchange-alt"></i></button>
+            </div>
+
+            <div class="select-box">
+                <label>変換先</label>
+                <select id="toCurrency">
+                    <option value="USD" selected>USD - アメリカドル</option>
+                    <option value="JPY">JPY - 日本円</option>
+                    <option value="EUR">EUR - ユーロ</option>
+                    <option value="GBP">GBP - イギリス・ポンド</option>
+                    <option value="MMK">MMK - ミャンマー・チャット</option>
+                    <option value="THB">THB - タイ・バーツ</option>
+                    <option value="SGD">SGD - シンガポール・ドル</option>
+                    <option value="CNY">CNY - 中国元</option>
+                    <option value="KRW">KRW - 韓国ウォン</option>
+                    <option value="AUD">AUD - オーストラリア・ドル</option>
+                </select>
+            </div>
+        </div>
+
+        <button id="convertBtn" class="main-btn">換算する</button>
+
+        <div class="result-area">
+            <div id="loader" class="loader" style="display:none;"></div>
+            <p id="exchangeRateTxt">ボタンを押して計算</p>
+            <h3 id="resultAmount"></h3> <!-- ここに計算後の大きな金額を表示 -->
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+</html>
